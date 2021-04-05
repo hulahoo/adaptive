@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block {
+    width: 200px;
+    height: 100px;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.java {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.python{
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    display: none;
+}
+
+.php{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    display: none;
+}
+
+/* С 0 До 1024 пикселей работает то что ниже */
+@media screen and (max-width: 1024px) {
+    .java{
+        display: none;
+    }
+    .python{
+        display: block;
+    }
+}
+
+/* С 0 До 768 пикселей работает то что ниже */
+@media all and (max-width: 768px){
+    .python{
+        display: none;
+    }
+
+    .php{
+        display: block;
+    }
+}
+
+/* Начиная с 1500 пикселей и выше выполняется то что ниже */
+@media all and (min-width: 1500px) {
+    .python, .php{
+        display: block;
+    }    
+}
