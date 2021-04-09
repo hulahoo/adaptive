@@ -1,0 +1,88 @@
+.block-animation {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    transition-property: background-color; /* С помощью transition-property указываем какое свойство элемента мы хотим анимировать */
+    transition-duration: 0.3s;
+}
+
+.block-animation:hover{
+    background-color: brown;
+}
+
+
+.block-animation2 {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    margin: 20px;
+    transition: all 0.3s cubic-bezier(.44,1.22,1,.9); /* Вместо обозначения определенных свойвст можно выбрать all для всех свойств */
+}
+
+.block-animation2:hover{
+    width: 300px;
+    height: 300px;
+}
+
+.block {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    animation-name: fadeIn; /* Здесь мы указываем имя нашего кейфрейма */
+    animation-duration: 3s;
+    animation-iteration-count: 2; /* задаем кол-во повторений    */
+}
+
+p{
+    animation: slideIn 4s infinite alternate; /* animation name, duration, iteration-count, direction можно записать в один аттрибут  */
+}
+
+.circle{
+    background-color: coral;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    animation: pulsing 3s infinite;
+    animation-delay: 1s;
+}
+
+
+@keyframes pulsing{ 
+    0%{
+        transform: scale(0.5, 0.5);
+    }
+    50%{
+        transform: scale(1, 1);
+    }
+    100%{
+        transform: scale(0.5, 0.5);
+    }
+}
+
+
+@keyframes slideIn{
+    from{
+        margin-left: 100%;
+        width: 300%;
+    }
+    to{
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+
+
+/* Кейфреймы пишутся в самом конце после медиа запросов */
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    40%{
+        background-color: black;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
